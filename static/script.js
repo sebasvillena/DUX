@@ -25,6 +25,8 @@ const gameBackButton = document.getElementById("game-back-btn")
 //Seteo comportamiento de los botones para abrir y cerrar la pantalla
 startButton.addEventListener('click', showGame)
 gameBackButton.addEventListener('click', gameBack)
+//inicio el juego con un set de imagenes
+newImageSet()
 //traigo dos botones creados para ver el funcionamiento de los carteles de error/success
 const successButton = document.getElementById("game-success-btn")
 successButton.addEventListener("click", gameSuccess)
@@ -65,12 +67,20 @@ function gameSuccess(){
 function nextQuestion(){
     //Código que limpia las propiedades del cartel, en el futuro, tiene que obtener una
     //nueva pregunta y tendría que ponerla en pantalla
+    //newImageSet()
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.add("hide")
     messageContainer.classList.remove("message-container-success")
     messageContainer.classList.remove("message-container-warning")
     document.getElementById("cartel-titulo").innerHTML = ""
     document.getElementById("cartel-texto").innerHTML = ""
+}
+
+function newImageSet(){
+    //agarra un nivel nuevo de la lista de niveles si aun quedan
+    document.getElementById("img1").src = "images/silla.jpg"
+    document.getElementById("img2").src = "images/juguete.jpg"
+    document.getElementById("img3").src = "images/agua.jpg"
 }
 
 /*----------------------------------------------------------------------------------*/
