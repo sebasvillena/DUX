@@ -1,23 +1,31 @@
+//Traigo los elementos del menú principal
 const settingsButton = document.getElementById("settings-btn");
 const helpButton = document.getElementById("help-btn");
 const startButton = document.getElementById("start-btn");
 const menuContainer = document.getElementById("menu-container")
 
+//traigo los elementos de la pantalla de configuración
 const settingsContainer = document.getElementById("settings-container");
 const settingsBackButton = document.getElementById("settings-back-btn");
+//Seteo comportamiento de los botones para abrir y cerrar la pantalla
 settingsButton.addEventListener('click', showSettings)
 settingsBackButton.addEventListener('click', settingsBack)
 
+//Traigo los elementos de la pantalla de ayuda
 const helpContainer = document.getElementById("help-container");
 const helpBackButton = document.getElementById("help-back-btn");
+//Seteo comportamiento de los botones para abrir y cerrar la pantalla
 helpButton.addEventListener('click', showHelp)
 helpBackButton.addEventListener('click', helpBack)
 
 
+//Traigo los elementos de la pantalla de juego
 const gameContainer = document.getElementById("game-container")
 const gameBackButton = document.getElementById("game-back-btn")
+//Seteo comportamiento de los botones para abrir y cerrar la pantalla
 startButton.addEventListener('click', showGame)
 gameBackButton.addEventListener('click', gameBack)
+//traigo dos botones creados para ver el funcionamiento de los carteles de error/success
 const successButton = document.getElementById("game-success-btn")
 successButton.addEventListener("click", gameSuccess)
 const warningButton = document.getElementById("game-wrong-btn")
@@ -28,6 +36,8 @@ warningButton.addEventListener('click', gameWarning)
 
 
 function gameWarning(){
+    //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
+    //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
     document.getElementById("cartel-titulo").innerHTML = "Cuidado!"
     document.getElementById("cartel-texto").innerHTML = "Le pifiaste"
     messageContainer = document.getElementById("mensaje-container")
@@ -39,6 +49,8 @@ function gameWarning(){
 
 
 function gameSuccess(){
+    //Código para mostrar cartel de success, en el futuro cuando tengamos la variable global
+    //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
     document.getElementById("cartel-titulo").innerHTML = "Muy bien!"
     document.getElementById("cartel-texto").innerHTML = "Mensaje de por qué es correcto"
     messageContainer = document.getElementById("mensaje-container")
@@ -51,6 +63,8 @@ function gameSuccess(){
 
 
 function nextQuestion(){
+    //Código que limpia las propiedades del cartel, en el futuro, tiene que obtener una
+    //nueva pregunta y tendría que ponerla en pantalla
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.add("hide")
     messageContainer.classList.remove("message-container-success")
@@ -58,6 +72,9 @@ function nextQuestion(){
     document.getElementById("cartel-titulo").innerHTML = ""
     document.getElementById("cartel-texto").innerHTML = ""
 }
+
+/*----------------------------------------------------------------------------------*/
+//Funciones para intercambiar pantallas
 
 function showGame(){
     menuContainer.classList.add('hide')
