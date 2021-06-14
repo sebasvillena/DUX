@@ -12,19 +12,38 @@
     <div class="container">
                 <div id="menu-container">
                   <h1>JUEGO DUX</h1>  
-                  <button class="btn" id="help-btn">Cómo jugar</button>
-                  <button class="btn" id="settings-btn">Configuraciones</button>
-                  <button class="btn" id="start-btn">Comenzar</button>
+                    <div id="grid-botones-menu" >
+                            <button class="btn" id="help-btn">Cómo jugar</button>
+                            <button class="btn" id="settings-btn">Configuraciones</button>
+                            <button class="btn" id="start-btn">Comenzar</button>
+                    </div>
                 </div>
 
                 <div id="settings-container" class="hide">
-                    <h1>Configuraciones</h1>
-                    <button class="btn" id="settings-back-btn">Volver</button>
+                                    <h1>Configuraciones</h1>
+
+                                    <label for="tamaño-letra"> Tamaño de letra:</label>
+                                    <input type="range" id="tamaño-letra">
+                                    <br>
+
+                                    <label for="color-selector">Color/contraste:</label>
+                                    <select id="color-selector">
+                                    <option value="original ">Original</option>
+                                    <option value="altoContraste">Alto contraste</option>
+                                    <option value="protanopia">Protanopia</option>
+                                    <option value="deuteranopia">Deuteranopia</option>
+                                    <option value="tritanopia">tritanopia</option>
+                                    </select>
+                                    <br>
+
+                                    <button class="btn" id="settings-back-btn">Volver</button>
                 </div>
 
                 <div id="help-container" class="hide">
                     <h1>Cómo jugar</h1>
-                    <p>Texto explicativo placeholder de cómo jugar</p>
+                    <p>Selecciona los elementos que consideres que correspondan a una mochila de emergencia y arrastralos hacia la imagen de la mochila. </p>
+                    <br>
+                    <p>El Objetivo de este juego es aprender qué cosas pueden ser de ayuda en caso de que te encuentres en una situación de emergencia.</p>
                     <button class="btn" id="help-back-btn">Volver</button>
                 </div>
     </div>
