@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,24 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    Hello world pero con el html
+    <div class="container">
+                <div id="menu-container">
+                  <h1>JUEGO DUX</h1>  
+                  <button class="btn" id="help-btn">Cómo jugar</button>
+                  <button class="btn" id="settings-btn">Configuraciones</button>
+                  <button class="btn" id="start-btn">Comenzar</button>
+                </div>
+
+                <div id="settings-container" class="hide">
+                    <h1>Configuraciones</h1>
+                    <button class="btn" id="settings-back-btn">Volver</button>
+                </div>
+
+                <div id="help-container" class="hide">
+                    <h1>Cómo jugar</h1>
+                    <p>Texto explicativo placeholder de cómo jugar</p>
+                    <button class="btn" id="help-back-btn">Volver</button>
+                </div>
+    </div>
 </body>
 </html>
