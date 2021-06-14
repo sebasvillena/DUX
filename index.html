@@ -21,6 +21,13 @@
 
                 <div id="settings-container" class="hide">
                                     <h1>Configuraciones</h1>
+                                    <label for="mostrar-texto">Mostrar texto</label> 
+                                    <input type="checkbox" id="mostrar-texto">
+                                    <br>
+
+                                    <label for="seleccionar-imagenes">Seleccionar imagenes</label> 
+                                    <input type="checkbox" id="seleccionar-imagenes">
+                                    <br>
 
                                     <label for="tamaño-letra"> Tamaño de letra:</label>
                                     <input type="range" id="tamaño-letra">
@@ -45,6 +52,20 @@
                     <br>
                     <p>El Objetivo de este juego es aprender qué cosas pueden ser de ayuda en caso de que te encuentres en una situación de emergencia.</p>
                     <button class="btn" id="help-back-btn">Volver</button>
+                </div>
+
+
+                <div id="game-container" class="hide">
+                            <div id=mensaje-container class="hide">
+                                    <h3 id="cartel-titulo"></h3>
+                                    <p id="cartel-texto"></p>
+                                    <button class="btn" id="game-siguiente-btn">Siguiente</button>
+                            </div>
+
+                            <button class="btn" id="game-back-btn">Volver al menu principal</button>
+                            <button class="btn" id="game-success-btn">Responer bien</button>
+                            <button class="btn" id="game-wrong-btn"> Responder mal</button>
+
                 </div>
     </div>
 </body>
