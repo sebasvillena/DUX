@@ -1,3 +1,19 @@
+/*--------------------------------------------------*/
+//sección de preguntas
+const questions = [
+    
+    [
+        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Botella de agua"},
+        {name: "juguete", ruta: "images/juguete.jpg", correct: false, alt:"Juguete cubo de rubik"},
+        { name: "silla", ruta: "images/silla.jpg", correct: false, alt:"Silla"}            
+    ],
+    [
+        {name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas"},
+        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas" },
+        { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol"}            
+    ]
+]
+
 //Traigo los elementos del menú principal
 const settingsButton = document.getElementById("settings-btn");
 const helpButton = document.getElementById("help-btn");
@@ -19,6 +35,13 @@ helpButton.addEventListener('click', showHelp)
 helpBackButton.addEventListener('click', helpBack)
 
 
+
+//obtiene las preguntas y las mezcla
+let shuffledQuestions, currentQuestionIndex
+shuffledQuestions = questions.sort(() => Math.random() - .5)
+currentQuestionIndex = 0
+
+
 //Traigo los elementos de la pantalla de juego
 const gameContainer = document.getElementById("game-container")
 const gameBackButton = document.getElementById("game-back-btn")
@@ -26,7 +49,7 @@ const gameBackButton = document.getElementById("game-back-btn")
 startButton.addEventListener('click', showGame)
 gameBackButton.addEventListener('click', gameBack)
 //inicio el juego con un set de imagenes
-newImageSet()
+nextQuestion()
 //traigo dos botones creados para ver el funcionamiento de los carteles de error/success
 const successButton = document.getElementById("game-success-btn")
 successButton.addEventListener("click", gameSuccess)
@@ -41,7 +64,7 @@ function gameWarning(){
     //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
     document.getElementById("cartel-titulo").innerHTML = "Cuidado!"
-    document.getElementById("cartel-texto").innerHTML = "Le pifiaste"
+    document.getElementById("cartel-texto").innerHTML = "La opción no es la correcta"
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-warning")
@@ -63,11 +86,19 @@ function gameSuccess(){
 }
 
 
-
 function nextQuestion(){
     //Código que limpia las propiedades del cartel, en el futuro, tiene que obtener una
     //nueva pregunta y tendría que ponerla en pantalla
-    //newImageSet()
+    newImageSet(shuffledQuestions[currentQuestionIndex])
+    currentQuestionIndex = currentQuestionIndex + 1
+    console.log(shuffledQuestions.length)
+    console.log(currentQuestionIndex)
+    if(shuffledQuestions.length < currentQuestionIndex + 1){
+        document.getElementById("game-siguiente-btn-container").classList.add("hide")
+        document.getElementById("game-finalizar-btn-container").classList.remove("hide")
+        finishButton = document.getElementById("game-finalizar-btn")
+        finishButton.addEventListener("click", showFinish)
+    }
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.add("hide")
     messageContainer.classList.remove("message-container-success")
@@ -76,15 +107,23 @@ function nextQuestion(){
     document.getElementById("cartel-texto").innerHTML = ""
 }
 
-function newImageSet(){
-    //agarra un nivel nuevo de la lista de niveles si aun quedan
-    document.getElementById("img1").src = "images/silla.jpg"
-    document.getElementById("img2").src = "images/juguete.jpg"
-    document.getElementById("img3").src = "images/agua.jpg"
+function newImageSet(question){
+    shuffledOptions = question.sort(() => Math.random() - .5)
+    document.getElementById("img1").src = question[0].ruta
+    document.getElementById("img1").alt = question[0].alt
+    document.getElementById("img2").src = question[1].ruta
+    document.getElementById("img2").alt = question[1].alt
+    document.getElementById("img3").src = question[2].ruta
+    document.getElementById("img3").alt = question[2].alt
 }
 
 /*----------------------------------------------------------------------------------*/
 //Funciones para intercambiar pantallas
+
+function showFinish(){
+    gameContainer.classList.add("hide")
+    document.getElementById("finDeJuego-conatiner").classList.remove("hide")
+}
 
 function showGame(){
     menuContainer.classList.add('hide')
@@ -115,3 +154,5 @@ function settingsBack(){
     menuContainer.classList.remove('hide')
     settingsContainer.classList.add('hide')
 }
+
+
