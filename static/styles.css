@@ -66,16 +66,22 @@
     display: grid;
     grid-template-columns: auto auto ;
     align-self: center;
+    width: min-content;
+    margin: 0 auto;
   }
 
   .grid-config-option-container{
     text-align: left;
+    min-width: fit-content;
+    white-space: nowrap;
+    padding-right: 5px;
   }
 
   .grid-config-checkbox-container{
     display: flex;
     justify-content: right;
     align-items: right;
+    padding-left: 5px;
   }
 
   
