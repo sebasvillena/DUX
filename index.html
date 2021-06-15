@@ -20,30 +20,44 @@
                 </div>
 
                 <div id="settings-container" class="hide">
-                                    <h1>Configuraciones</h1>
-                                    <label for="mostrar-texto">Mostrar texto</label> 
-                                    <input type="checkbox" id="mostrar-texto">
-                                    <br>
+                    <h1>Configuraciones</h1>
+                    <div class="grid-config-container">
+                        <div class="grid-config-option-container">
+                            <label for="mostrar-texto">Mostrar texto</label> 
+                        </div>
+                        <div class="grid-config-checkbox-container">
+                            <input type="checkbox" id="mostrar-texto">
+                        </div>
 
-                                    <label for="seleccionar-imagenes">Seleccionar imagenes</label> 
-                                    <input type="checkbox" id="seleccionar-imagenes">
-                                    <br>
+                        <div class="grid-config-option-container">
+                            <label for="seleccionar-imagenes">Seleccionar imagenes</label> 
+                        </div>
+                        <div class="grid-config-checkbox-container">
+                            <input type="checkbox" id="seleccionar-imagenes">
+                        </div>
+                       
+                        <div class="grid-config-option-container">
+                            <label for="tamaño-letra"> Tamaño de letra:</label>
+                        </div>
+                        <div class="grid-config-checkbox-container">
+                            <input type="range" id="tamaño-letra">
+                        </div>
+                        
+                        <div class="grid-config-option-container">
+                            <label for="color-selector">Color/contraste:</label>
+                        </div>
+                        <div class="grid-config-checkbox-container">
+                            <select id="color-selector">
+                                <option value="original ">Original</option>
+                                <option value="altoContraste">Alto contraste</option>
+                                <option value="protanopia">Protanopia</option>
+                                <option value="deuteranopia">Deuteranopia</option>
+                                <option value="tritanopia">tritanopia</option>
+                            </select>
+                        </div>
+                    </div>
 
-                                    <label for="tamaño-letra"> Tamaño de letra:</label>
-                                    <input type="range" id="tamaño-letra">
-                                    <br>
-
-                                    <label for="color-selector">Color/contraste:</label>
-                                    <select id="color-selector">
-                                    <option value="original ">Original</option>
-                                    <option value="altoContraste">Alto contraste</option>
-                                    <option value="protanopia">Protanopia</option>
-                                    <option value="deuteranopia">Deuteranopia</option>
-                                    <option value="tritanopia">tritanopia</option>
-                                    </select>
-                                    <br>
-
-                                    <button class="btn" id="settings-back-btn">Volver</button>
+                    <button class="btn" id="settings-back-btn">Volver</button>
                 </div>
 
                 <div id="help-container" class="hide">
