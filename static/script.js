@@ -91,8 +91,6 @@ function nextQuestion(){
     //nueva pregunta y tendría que ponerla en pantalla
     newImageSet(shuffledQuestions[currentQuestionIndex])
     currentQuestionIndex = currentQuestionIndex + 1
-    console.log(shuffledQuestions.length)
-    console.log(currentQuestionIndex)
     if(shuffledQuestions.length < currentQuestionIndex + 1){
         document.getElementById("game-siguiente-btn-container").classList.add("hide")
         document.getElementById("game-finalizar-btn-container").classList.remove("hide")
