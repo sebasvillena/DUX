@@ -28,18 +28,49 @@
   }
 
   .btn{
-      width: 250px;
-      background-color: #13AADC;
-      border: none;
-      text-align: center;
-      font-size: large;
-      padding: 15px 32px;
-      border-radius: 5px;
-      display: block;
-      margin: auto;
-      margin-block: 15px;
-      align-content: center;
-      justify-content: center;
+    width: 250px;
+    background-color: #13aadd;
+    border: none;
+    text-align: center;
+    font-size: large;
+    padding: 15px 32px;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    margin-block: 15px;
+    align-content: center;
+    justify-content: center;   
+    transition-duration: 0.45s;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .btn:hover{
+    background-color: #00749b;
+    color: white;
+  }
+
+  .btn::after {
+    content: "";
+    background: #00749b;
+    position: absolute;
+    z-index: -1;
+    padding: 15px 32px;
+    display: block;
+    transition: all 0.35s;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+  }
+
+  .btn:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s;
   }
 
   .message-container-success{
