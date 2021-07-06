@@ -45,9 +45,7 @@ currentQuestionIndex = 0
 const nextLvlContainer = document.getElementById("game-lvl-score-container");
 
 function getAnswerData(otherName){
-    console.log(otherName)
     var answer = shuffledQuestions[currentQuestionIndex-1].find( ({name}) => name == otherName)
-    console.log(answer)
     return answer
 }
 
@@ -122,6 +120,9 @@ function nextQuestion(){
         document.getElementById("game-finalizar-btn-container").classList.remove("hide")
         finishButton = document.getElementById("game-finalizar-btn")
         finishButton.addEventListener("click", showFinish)
+    }else{
+        document.getElementById("game-siguiente-btn-container").classList.remove("hide")
+        document.getElementById("game-finalizar-btn-container").classList.add("hide")
     }
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.add("hide")
@@ -149,13 +150,10 @@ function newImageSet(question){
 
 function gameOverMenu(){
     menuContainer.classList.remove('hide')
-    console.log(currentQuestionIndex)
-
     document.getElementById("finDeJuego-conatiner").classList.add("hide")
     shuffledQuestions = questions.sort(() => Math.random() - .5)
-currentQuestionIndex = 0
-console.log(currentQuestionIndex)
-nextQuestion()
+    currentQuestionIndex = 0
+    nextQuestion()
 }
 
 function showFinish(){

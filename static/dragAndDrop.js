@@ -1,7 +1,3 @@
-
-var pos = {"img1":[x = null, y=null],
-"img2":[x = null, y=null],
-"img3":[x = null, y=null]}
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -17,29 +13,12 @@ interact('.draggable')
     // enable autoScroll
     autoScroll: true,
 
-    onstart: function(event){
-      if (pos[event.target.id].x== null){
-        console.log(event.target.id)
-        pos[event.target.id].x= event.x0
-        pos[event.target.id].y= event.y0
-        console.log("x e y seteados:")
-        console.log("x = ", pos[event.target.id].x)
-        console.log("y = ", pos[event.target.id].y)
-
-      }
-      else{
-        console.log("los valores ya fueron seteados")
-      }
-    },
-
-
     listeners: {
       // call this function on every dragmove event
       move: dragMoveListener,
 
       // call this function on every dragend event
       end (event) {
-        console.log("dragged")
       }
     }
   })
@@ -49,8 +28,6 @@ function dragMoveListener (event) {
   // keep the dragged position in the data-x/data-y attributes
   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-//console.log("-----------------------------------------------------------------")
-//console.log(event)
   // translate the element
   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
 
@@ -90,7 +67,6 @@ interact('.dropzone').dropzone({
       // remove the drop feedback style
       event.target.classList.remove('drop-target')
       event.relatedTarget.classList.remove('can-drop')
-      console.log("desdropeado")
     },
     ondrop: function (event) {
       event.relatedTarget.setAttribute("data-x", 0)
