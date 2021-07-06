@@ -9,7 +9,7 @@ const questions = [
     ],
     [
         { name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas", comentario:"¡Las velas son muy útiles, con ellas podemos ver de noche!"},
-        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas", comentarios:"Lamentablemente, las plantas no son realmente una prioridad durante las emergencias." },
+        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas", comentario:"Lamentablemente, las plantas no son realmente una prioridad durante las emergencias."},
         { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."}            
     ]
 ]
