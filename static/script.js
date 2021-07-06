@@ -42,12 +42,22 @@ shuffledQuestions = questions.sort(() => Math.random() - .5)
 currentQuestionIndex = 0
 
 
+//Traigo los elementos de la pantalla de pausa
+const pauseContainer = document.getElementById("game-pause-container")
+const gameBackButton = document.getElementById("game-back-btn")
+const unpauseButton = document.getElementById("game-unpause-btn")
+//Seteo comportamiento de los botones para abrir y cerrar la pantalla
+gameBackButton.addEventListener('click', gameBack)
+unpauseButton.addEventListener('click', gameUnpause)
+//mover aca el boton de ir al menu y eso (aun no va)
+
+
 //Traigo los elementos de la pantalla de juego
 const gameContainer = document.getElementById("game-container")
-const gameBackButton = document.getElementById("game-back-btn")
+const pauseButton = document.getElementById("game-pause-btn")
 //Seteo comportamiento de los botones para abrir y cerrar la pantalla
 startButton.addEventListener('click', showGame)
-gameBackButton.addEventListener('click', gameBack)
+pauseButton.addEventListener('click', gamePause)
 //inicio el juego con un set de imagenes
 nextQuestion()
 //traigo dos botones creados para ver el funcionamiento de los carteles de error/success
@@ -133,7 +143,17 @@ function showGame(){
 
 function gameBack(){
     menuContainer.classList.remove('hide')
+    pauseContainer.classList.add('hide')
+}
+
+function gamePause(){
+    pauseContainer.classList.remove('hide')
     gameContainer.classList.add('hide')
+}
+
+function gameUnpause(){
+    gameContainer.classList.remove('hide')
+    pauseContainer.classList.add('hide')
 }
 
 function showHelp(){
