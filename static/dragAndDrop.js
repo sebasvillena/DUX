@@ -96,8 +96,13 @@ interact('.dropzone').dropzone({
       event.relatedTarget.setAttribute("data-x", 0)
       event.relatedTarget.setAttribute("data-y",0)
       event.relatedTarget.style.transform = "translate(0px, 0px)"
-
-      console.log(isCorrect(event.relatedTarget.name))
+      
+      if(isCorrect(event.relatedTarget.name)){
+        gameSuccess()
+      }
+      else{
+        gameWarning()
+      }
     },
     ondropdeactivate: function (event) {
       // remove active dropzone feedback
