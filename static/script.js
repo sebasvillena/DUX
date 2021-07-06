@@ -42,6 +42,14 @@ shuffledQuestions = questions.sort(() => Math.random() - .5)
 currentQuestionIndex = 0
 
 
+function isCorrect(otherName){
+    console.log(otherName)
+    var question = shuffledQuestions[currentQuestionIndex-1].find( ({name}) => name == otherName)
+    console.log(question)
+    return question.correct
+}
+
+
 //Traigo los elementos de la pantalla de pausa
 const pauseContainer = document.getElementById("game-pause-container")
 const gameBackButton = document.getElementById("game-back-btn")
@@ -122,10 +130,13 @@ function newImageSet(question){
     shuffledOptions = question.sort(() => Math.random() - .5)
     document.getElementById("img1").src = question[0].ruta
     document.getElementById("img1").alt = question[0].alt
+    document.getElementById("img1").name = question[0].name
     document.getElementById("img2").src = question[1].ruta
     document.getElementById("img2").alt = question[1].alt
+    document.getElementById("img2").name = question[1].name
     document.getElementById("img3").src = question[2].ruta
     document.getElementById("img3").alt = question[2].alt
+    document.getElementById("img3").name = question[2].name
 }
 
 /*----------------------------------------------------------------------------------*/

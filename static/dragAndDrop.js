@@ -93,12 +93,11 @@ interact('.dropzone').dropzone({
       console.log("desdropeado")
     },
     ondrop: function (event) {
-      console.log("dropeado")
-      var target = event.target
-      console.log(event)
       event.relatedTarget.setAttribute("data-x", 0)
       event.relatedTarget.setAttribute("data-y",0)
       event.relatedTarget.style.transform = "translate(0px, 0px)"
+
+      console.log(isCorrect(event.relatedTarget.name))
     },
     ondropdeactivate: function (event) {
       // remove active dropzone feedback
