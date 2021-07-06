@@ -37,7 +37,7 @@ helpBackButton.addEventListener('click', helpBack)
 
 
 //obtiene las preguntas y las mezcla
-let shuffledQuestions, currentQuestionIndex
+var shuffledQuestions, currentQuestionIndex
 shuffledQuestions = questions.sort(() => Math.random() - .5)
 currentQuestionIndex = 0
 
@@ -77,8 +77,8 @@ const warningButton = document.getElementById("game-wrong-btn")
 warningButton.addEventListener('click', gameWarning)
 
 
-
-
+const gameOverMainMenuButton = document.getElementById("game-main-menu")
+gameOverMainMenuButton.addEventListener("click", gameOverMenu)
 
 function gameWarning(){
     //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
@@ -98,9 +98,6 @@ function gameWarning(){
 function gameSuccess(){
     //Código para mostrar cartel de success, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
-    img = document.getElementById("img1")
-    img.classList.remove("draggable")
-    img.classList.add("draggable")
     document.getElementById("cartel-titulo").innerHTML = "Muy bien!"
     document.getElementById("cartel-texto").innerHTML = "Mensaje de por qué es correcto"
     messageContainer = document.getElementById("mensaje-container")
@@ -153,6 +150,17 @@ function newImageSet(question){
 
 /*----------------------------------------------------------------------------------*/
 //Funciones para intercambiar pantallas
+
+function gameOverMenu(){
+    menuContainer.classList.remove('hide')
+    console.log(currentQuestionIndex)
+
+    document.getElementById("finDeJuego-conatiner").classList.add("hide")
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+currentQuestionIndex = 0
+console.log(currentQuestionIndex)
+nextQuestion()
+}
 
 function showFinish(){
     nextLvlContainer.classList.add("hide")
