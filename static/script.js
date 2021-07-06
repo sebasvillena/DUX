@@ -3,14 +3,14 @@
 const questions = [
     
     [
-        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Botella de agua"},
-        {name: "juguete", ruta: "images/juguete.jpg", correct: false, alt:"Juguete cubo de rubik"},
-        { name: "silla", ruta: "images/silla.jpg", correct: false, alt:"Silla"}            
+        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Botella de agua", comentario:"¡Es buena idea llevar agua para mantenernos hidratados!"},
+        { name: "juguete", ruta: "images/juguete.jpg", correct: false, alt:"Juguete cubo de rubik", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."},
+        { name: "silla", ruta: "images/silla.jpg", correct: false, alt:"Silla", comentario: "¡Las sillas (y otros muebles) son muy pesados para llevarlos!"}            
     ],
     [
-        {name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas"},
-        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas" },
-        { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol"}            
+        { name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas", comentario:"¡Las velas son muy útiles, con ellas podemos ver de noche!"},
+        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas", comentario:"Lamentablemente, las plantas no son realmente una prioridad durante las emergencias."},
+        { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."}            
     ]
 ]
 
@@ -44,13 +44,12 @@ currentQuestionIndex = 0
 //Traigo los elementos de la pantalla de fin de nivel
 const nextLvlContainer = document.getElementById("game-lvl-score-container");
 
-function isCorrect(otherName){
+function getAnswerData(otherName){
     console.log(otherName)
-    var question = shuffledQuestions[currentQuestionIndex-1].find( ({name}) => name == otherName)
-    console.log(question)
-    return question.correct
+    var answer = shuffledQuestions[currentQuestionIndex-1].find( ({name}) => name == otherName)
+    console.log(answer)
+    return answer
 }
-
 
 //Traigo los elementos de la pantalla de pausa
 const pauseContainer = document.getElementById("game-pause-container")
@@ -70,43 +69,40 @@ startButton.addEventListener('click', showGame)
 pauseButton.addEventListener('click', gamePause)
 //inicio el juego con un set de imagenes
 nextQuestion()
-//traigo dos botones creados para ver el funcionamiento de los carteles de error/success
-const successButton = document.getElementById("game-success-btn")
-successButton.addEventListener("click", gameSuccess)
-const warningButton = document.getElementById("game-wrong-btn")
-warningButton.addEventListener('click', gameWarning)
-
 
 const gameOverMainMenuButton = document.getElementById("game-main-menu")
 gameOverMainMenuButton.addEventListener("click", gameOverMenu)
+function gameNextLevel(answer){
+    if (answer.correct){
+        gameSuccess()
+    } else {
+        gameWarning()
+    }
+    document.getElementById("cartel-texto").innerHTML = answer.comentario
 
-function gameWarning(){
-    //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
-    //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
-    document.getElementById("cartel-titulo").innerHTML = "Cuidado!"
-    document.getElementById("cartel-texto").innerHTML = "La opción no es la correcta"
-    messageContainer = document.getElementById("mensaje-container")
-    messageContainer.classList.remove("hide")
-    messageContainer.classList.add("message-container-warning")
     nextButton = document.getElementById("game-siguiente-btn")
     nextButton.addEventListener("click", nextLevel)
 
     self.cambiarPantallaPuntajeNivel();  
 }
 
+function gameWarning(){
+    //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
+    //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
+    document.getElementById("cartel-titulo").innerHTML = "¡Cuidado!"
+    messageContainer = document.getElementById("mensaje-container")
+    messageContainer.classList.remove("hide")
+    messageContainer.classList.add("message-container-warning")
+}
+
 
 function gameSuccess(){
     //Código para mostrar cartel de success, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
-    document.getElementById("cartel-titulo").innerHTML = "Muy bien!"
-    document.getElementById("cartel-texto").innerHTML = "Mensaje de por qué es correcto"
+    document.getElementById("cartel-titulo").innerHTML = "¡Muy bien!"
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-success")
-    nextButton = document.getElementById("game-siguiente-btn")
-    nextButton.addEventListener("click", nextLevel)
-
-    self.cambiarPantallaPuntajeNivel();
 }
 
 function nextLevel(){
