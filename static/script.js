@@ -43,6 +43,9 @@ currentQuestionIndex = 0
 
 //Traigo los elementos de la pantalla de fin de nivel
 const nextLvlContainer = document.getElementById("game-lvl-score-container");
+const reintentarButton = document.getElementById("game-reintentar-btn");
+//Seteo comportamiento de los botones para reintentar
+reintentarButton.addEventListener('click', retryLevel)
 
 function getAnswerData(otherName){
     var answer = shuffledQuestions[currentQuestionIndex-1].find( ({name}) => name == otherName)
@@ -105,10 +108,14 @@ function gameSuccess(){
 
 function nextLevel(){
     self.nextQuestion();
-    gameContainer.classList.remove('hide')
-    nextLvlContainer.classList.add('hide')
+    showGameAgain()
 }
 
+function retryLevel(){
+    messageContainer.classList.remove("message-container-success")
+    messageContainer.classList.remove("message-container-warning")
+    showGameAgain()
+}
 
 function nextQuestion(){
     //Código que limpia las propiedades del cartel, en el futuro, tiene que obtener una
@@ -204,4 +211,9 @@ function settingsBack(){
 function cambiarPantallaPuntajeNivel(){
     gameContainer.classList.add('hide')
     nextLvlContainer.classList.remove('hide')
+}
+
+function showGameAgain(){
+    gameContainer.classList.remove('hide')
+    nextLvlContainer.classList.add('hide')
 }
