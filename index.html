@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUX</title>
     <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script defer src="dragAndDrop.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -83,12 +85,12 @@
 
                             
                             <div class="grid-game" id="images-grid">
-                                <img  id="img1" width="200px">
-                                <img  id="img2" width="200px">
-                                <img  id="img3" width="200px">
+                                <img  id="img1" width="200px" class="draggable">
+                                <img  id="img2" width="200px" class="draggable">
+                                <img  id="img3" width="200px" class="draggable">
 
                                 <!--Cambiar por imagen de la mochila-->
-                                <img class="grid-game-bag" id="imgBag" src = "images/silla.jpg" width="200px"> 
+                                <img class="grid-game-bag dropzone" id="imgBag" src = "images/silla.jpg" width="200px"> 
                             </div>
                             
                             <button class="btn" id="game-back-btn">Volver al menu principal</button>

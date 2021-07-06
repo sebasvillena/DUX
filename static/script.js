@@ -76,6 +76,9 @@ function gameWarning(){
 function gameSuccess(){
     //Código para mostrar cartel de success, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
+    img = document.getElementById("img1")
+    img.classList.remove("draggable")
+    img.classList.add("draggable")
     document.getElementById("cartel-titulo").innerHTML = "Muy bien!"
     document.getElementById("cartel-texto").innerHTML = "Mensaje de por qué es correcto"
     messageContainer = document.getElementById("mensaje-container")
@@ -152,5 +155,4 @@ function settingsBack(){
     menuContainer.classList.remove('hide')
     settingsContainer.classList.add('hide')
 }
-
 
