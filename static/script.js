@@ -41,6 +41,8 @@ let shuffledQuestions, currentQuestionIndex
 shuffledQuestions = questions.sort(() => Math.random() - .5)
 currentQuestionIndex = 0
 
+//Traigo los elementos de la pantalla de fin de nivel
+const nextLvlContainer = document.getElementById("game-lvl-score-container");
 
 //Traigo los elementos de la pantalla de pausa
 const pauseContainer = document.getElementById("game-pause-container")
@@ -79,7 +81,9 @@ function gameWarning(){
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-warning")
     nextButton = document.getElementById("game-siguiente-btn")
-    nextButton.addEventListener("click", nextQuestion)
+    nextButton.addEventListener("click", nextLevel)
+
+    self.cambiarPantallaPuntajeNivel();  
 }
 
 
@@ -95,7 +99,15 @@ function gameSuccess(){
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-success")
     nextButton = document.getElementById("game-siguiente-btn")
-    nextButton.addEventListener("click", nextQuestion)
+    nextButton.addEventListener("click", nextLevel)
+
+    self.cambiarPantallaPuntajeNivel();
+}
+
+function nextLevel(){
+    self.nextQuestion();
+    gameContainer.classList.remove('hide')
+    nextLvlContainer.classList.add('hide')
 }
 
 
@@ -115,7 +127,7 @@ function nextQuestion(){
     messageContainer.classList.remove("message-container-success")
     messageContainer.classList.remove("message-container-warning")
     document.getElementById("cartel-titulo").innerHTML = ""
-    document.getElementById("cartel-texto").innerHTML = ""
+    document.getElementById("cartel-texto").innerHTML = ""    
 }
 
 function newImageSet(question){
@@ -132,7 +144,7 @@ function newImageSet(question){
 //Funciones para intercambiar pantallas
 
 function showFinish(){
-    gameContainer.classList.add("hide")
+    nextLvlContainer.classList.add("hide")
     document.getElementById("finDeJuego-conatiner").classList.remove("hide")
 }
 
@@ -176,3 +188,7 @@ function settingsBack(){
     settingsContainer.classList.add('hide')
 }
 
+function cambiarPantallaPuntajeNivel(){
+    gameContainer.classList.add('hide')
+    nextLvlContainer.classList.remove('hide')
+}
