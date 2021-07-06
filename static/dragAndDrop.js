@@ -1,5 +1,7 @@
 
-
+var pos = {"img1":[x = null, y=null],
+"img2":[x = null, y=null],
+"img3":[x = null, y=null]}
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -15,20 +17,29 @@ interact('.draggable')
     // enable autoScroll
     autoScroll: true,
 
+    onstart: function(event){
+      if (pos[event.target.id].x== null){
+        console.log(event.target.id)
+        pos[event.target.id].x= event.x0
+        pos[event.target.id].y= event.y0
+        console.log("x e y seteados:")
+        console.log("x = ", pos[event.target.id].x)
+        console.log("y = ", pos[event.target.id].y)
+
+      }
+      else{
+        console.log("los valores ya fueron seteados")
+      }
+    },
+
+
     listeners: {
       // call this function on every dragmove event
       move: dragMoveListener,
 
       // call this function on every dragend event
       end (event) {
-        var textEl = event.target.querySelector('p')
-
-       //sacar este codigo, es del ejemplo 
-        textEl && (textEl.textContent =
-          'moved a distance of ' +
-          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px')
+        console.log("dragged")
       }
     }
   })
@@ -38,7 +49,8 @@ function dragMoveListener (event) {
   // keep the dragged position in the data-x/data-y attributes
   var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
   var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
+//console.log("-----------------------------------------------------------------")
+//console.log(event)
   // translate the element
   target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
 
@@ -82,6 +94,11 @@ interact('.dropzone').dropzone({
     },
     ondrop: function (event) {
       console.log("dropeado")
+      var target = event.target
+      console.log(event)
+      event.relatedTarget.setAttribute("data-x", 0)
+      event.relatedTarget.setAttribute("data-y",0)
+      event.relatedTarget.style.transform = "translate(0px, 0px)"
     },
     ondropdeactivate: function (event) {
       // remove active dropzone feedback
@@ -103,3 +120,4 @@ interact('.dropzone').dropzone({
       // dragMoveListener from the dragging demo above
       listeners: { move: dragMoveListener }
     })
+
