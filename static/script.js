@@ -96,7 +96,10 @@ function gameWarning(){
     //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
     document.getElementById("cartel-titulo").innerHTML = "¡Cuidado!"
+    document.getElementById("imagen-resultado").src = "images/opcion-incorrecta.png"
+
     messageContainer = document.getElementById("mensaje-container")
+    
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-warning")
 }
@@ -106,6 +109,8 @@ function gameSuccess(){
     //Código para mostrar cartel de success, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
     document.getElementById("cartel-titulo").innerHTML = "¡Muy bien!"
+    document.getElementById("imagen-resultado").src = "images/opcion-correcta.png"
+    
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-success")
