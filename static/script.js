@@ -110,7 +110,7 @@ function gameSuccess(){
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
     document.getElementById("cartel-titulo").innerHTML = "¡Muy bien!"
     document.getElementById("imagen-resultado").src = "images/opcion-correcta.png"
-    
+
     messageContainer = document.getElementById("mensaje-container")
     messageContainer.classList.remove("hide")
     messageContainer.classList.add("message-container-success")
