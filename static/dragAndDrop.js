@@ -54,26 +54,14 @@ interact('.dropzone').dropzone({
       // add active dropzone feedback
       event.target.classList.add('drop-active')
     },
-    ondragenter: function (event) {
-      var draggableElement = event.relatedTarget
-      var dropzoneElement = event.target
-  
-      // feedback the possibility of a drop
-      dropzoneElement.classList.add('drop-target')
-      draggableElement.classList.add('can-drop')
-      draggableElement.textContent = 'Dragged in'
-    },
-    ondragleave: function (event) {
-      // remove the drop feedback style
-      event.target.classList.remove('drop-target')
-      event.relatedTarget.classList.remove('can-drop')
-    },
+    
     ondrop: function (event) {
+      img = 
       event.relatedTarget.setAttribute("data-x", 0)
       event.relatedTarget.setAttribute("data-y",0)
       event.relatedTarget.style.transform = "translate(0px, 0px)"
-      
-      gameNextLevel(getAnswerData(event.relatedTarget.name))
+      console.log()
+      gameNextLevel(getAnswerData(event.relatedTarget.childNodes[1].name))
     },
     ondropdeactivate: function (event) {
       // remove active dropzone feedback

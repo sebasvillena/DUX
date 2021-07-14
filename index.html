@@ -71,15 +71,39 @@
                 </div>
 
 
-                <div id="game-container" class="hide">                            
+                <div id="game-container" class="hide">            
+                    <button class="btn" id="game-pause-btn">Pausar</button>   
+                    <form>
+                 <input type="radio" name="img_selected" value="default"checked class="hide" id="img_option_default"><br>
+
+             
                             <div class="grid-game" id="images-grid">
-                                <img  id="img1"  width="200px" class="draggable">
-                                <img  id="img2" width="200px" class="draggable">
-                                <img  id="img3" width="200px" class="draggable">
+                                <div class="draggable" id="img1_container">
+                                    <img  id="img1"  width="200px" >
+                                    <br>
+                                    <input type="radio" name="img_selected" value="Red" id="img_option_1" class="hide">
+                                    <label for="img_option_1" class="hide" id="img_option_2_label">placeholder 1
+                                    </label><br>
+                                </div>
+                                <div class="draggable" id="img2_container">
+                                    <img  id="img2" width="200px">
+                                    <br>
+                                    <input type="radio" name="img_selected" value="Blue" id="img_option_2"  class="hide">
+                                    <label for="img_option_2" class="hide" id="img_option_2_label">placeholder 2</label><br>
+                                </div>
+                                <div class="draggable" id="img3_container">
+                                    <img  id="img3" width="200px" >
+                                    <br>
+                                    <input type="radio" name="img_selected" value="Yellow" id="img_option_3" class="hide">
+                                    <label for="img_option_3" class="hide"id="img_option_3_label">placeholder 3</label><br>
+                                </div>
                                 <img class="grid-game-bag dropzone" id="imgBag" src = "images/mochila.jpg" width="200px"> 
                             </div>
 
-                            <button class="btn" id="game-pause-btn">Pausar</button>
+                        </form>     
+                        <div class="hide" id="game-select-option-btn-container">
+                            <button class="btn" id="game-select-option-btn">Seleccionar opción</button>
+                        </div>
                 </div>
 
                 <div id="game-pause-container" class="hide">

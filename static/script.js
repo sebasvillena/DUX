@@ -147,6 +147,7 @@ function nextQuestion(){
     messageContainer.classList.remove("message-container-warning")
     document.getElementById("cartel-titulo").innerHTML = ""
     document.getElementById("cartel-texto").innerHTML = ""    
+    document.getElementById("img_option_default").checked = true
 }
 
 function newImageSet(question){
@@ -154,16 +155,55 @@ function newImageSet(question){
     document.getElementById("img1").src = question[0].ruta
     document.getElementById("img1").alt = question[0].alt
     document.getElementById("img1").name = question[0].name
+    document.querySelector("form").elements.img_option_1.nextElementSibling.innerHTML = question[0].alt.charAt(0).toUpperCase() + question[0].alt.toLowerCase().slice(1)
     document.getElementById("img2").src = question[1].ruta
     document.getElementById("img2").alt = question[1].alt
     document.getElementById("img2").name = question[1].name
+    document.querySelector("form").elements.img_option_2.nextElementSibling.innerHTML = question[1].alt.charAt(0).toUpperCase() + question[1].alt.toLowerCase().slice(1)
     document.getElementById("img3").src = question[2].ruta
     document.getElementById("img3").alt = question[2].alt
     document.getElementById("img3").name = question[2].name
+    document.querySelector("form").elements.img_option_3.nextElementSibling.innerHTML = question[2].alt.charAt(0).toUpperCase() + question[2].alt.toLowerCase().slice(1)
+    
 }
+
+
+function enableAccessibility(){
+    document.getElementById("game-select-option-btn-container").classList.remove("hide")
+    for(let i=1; i<4; i++){
+        document.getElementById("img_option_" + i).classList.remove("hide")
+        document.getElementById("img" + i +"_container").classList.remove("draggable")
+    }
+    document.querySelector("form").elements.img_option_1.nextElementSibling.classList.remove("hide")
+    document.querySelector("form").elements.img_option_2.nextElementSibling.classList.remove("hide")
+    document.querySelector("form").elements.img_option_3.nextElementSibling.classList.remove("hide")
+}
+
+function disableAccessibility(){
+    document.getElementById("game-select-option-btn-container").classList.add("hide")
+    for(let i=1; i<4; i++){
+        document.getElementById("img_option_" + i).classList.add("hide")
+        document.getElementById("img"+ i +"_container").classList.add("draggable")
+    }
+    document.querySelector("form").elements.img_option_1.nextElementSibling.classList.add("hide")
+    document.querySelector("form").elements.img_option_2.nextElementSibling.classList.add("hide")
+    document.querySelector("form").elements.img_option_3.nextElementSibling.classList.add("hide")
+}
+
 
 /*----------------------------------------------------------------------------------*/
 //Funciones para intercambiar pantallas
+
+document.getElementById("game-select-option-btn").addEventListener("click", function(){
+    elementos = document.querySelector("form").elements
+    if(elementos[0].checked){
+        gameNextLevel(getAnswerData(elementos[0].previousElementSibling.previousElementSibling.name))
+    }else if(elementos[1].checked){
+        gameNextLevel(getAnswerData(elementos[1].previousElementSibling.previousElementSibling.name))
+    }else if (elementos[2].checked){
+        gameNextLevel(getAnswerData(elementos[2].previousElementSibling.previousElementSibling.name))
+    }
+})
 
 function gameOverMenu(){
     menuContainer.classList.remove('hide')
@@ -214,6 +254,11 @@ settingsContainer.classList.remove('hide')
 }
 
 function settingsBack(){
+    if(document.getElementById("seleccionar-imagenes").checked){
+        enableAccessibility()
+    }else{
+        disableAccessibility()
+    }
     menuContainer.classList.remove('hide')
     settingsContainer.classList.add('hide')
 }
