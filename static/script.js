@@ -19,6 +19,8 @@ const questions = [
     ]
 ]
 
+var configuration_menu_previous;
+
 //Traigo los elementos del menú principal
 const settingsButton = document.getElementById("settings-btn");
 const helpButton = document.getElementById("help-btn");
@@ -61,8 +63,10 @@ function getAnswerData(otherName){
 const pauseContainer = document.getElementById("game-pause-container")
 const gameBackButton = document.getElementById("game-back-btn")
 const unpauseButton = document.getElementById("game-unpause-btn")
+const configButton = document.getElementById("config-from-pause-button")
 //Seteo comportamiento de los botones para abrir y cerrar la pantalla
 gameBackButton.addEventListener('click', gameBack)
+configButton.addEventListener('click', showSettingsFromPauseButton)
 unpauseButton.addEventListener('click', gameUnpause)
 //mover aca el boton de ir al menu y eso (aun no va)
 
@@ -248,6 +252,12 @@ function showHelp(){
         helpContainer.classList.add('hide')
     }
 
+function showSettingsFromPauseButton(){
+    configuration_menu_previous = "Pausa"
+    pauseContainer.classList.add('hide')
+    showSettings()
+}
+
 function showSettings(){
 menuContainer.classList.add('hide')
 settingsContainer.classList.remove('hide')
@@ -259,7 +269,12 @@ function settingsBack(){
     }else{
         disableAccessibility()
     }
-    menuContainer.classList.remove('hide')
+    if (configuration_menu_previous == "Pausa"){
+        pauseContainer.classList.remove('hide')
+    } else {
+        menuContainer.classList.remove('hide')
+    }
+    configuration_menu_previous = "";
     settingsContainer.classList.add('hide')
 }
 

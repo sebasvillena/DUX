@@ -25,30 +25,30 @@
                     <h1>Configuraciones</h1>
                     <div class="grid-config-container">
                         <div class="grid-config-option-container">
-                            <label for="mostrar-texto">Mostrar texto</label> 
+                            <label for="mostrar-texto"><p>Mostrar texto</p></label> 
                         </div>
                         <div class="grid-config-checkbox-container">
-                            <input type="checkbox" id="mostrar-texto">
+                            <input class="checkbox" type="checkbox" id="mostrar-texto">
                         </div>
 
                         <div class="grid-config-option-container">
-                            <label for="seleccionar-imagenes">Seleccionar imagenes</label> 
+                            <label for="seleccionar-imagenes"><p>Seleccionar imagenes</p></label> 
                         </div>
                         <div class="grid-config-checkbox-container">
-                            <input type="checkbox" id="seleccionar-imagenes">
+                            <input class="checkbox" type="checkbox" id="seleccionar-imagenes">
                         </div>
                        
                         <div class="grid-config-option-container">
-                            <label for="tamaño-letra"> Tamaño de letra:</label>
+                            <label for="tamaño-letra"><p> Tamaño de letra:</p></label>
                         </div>
-                        <div class="grid-config-checkbox-container">
+                        <div class="grid-config-input-container">
                             <input type="range" id="tamaño-letra">
                         </div>
                         
                         <div class="grid-config-option-container">
-                            <label for="color-selector">Color/contraste:</label>
+                            <label for="color-selector"><p>Color/contraste:</p></label>
                         </div>
-                        <div class="grid-config-checkbox-container">
+                        <div class="grid-config-input-container">
                             <select id="color-selector">
                                 <option value="original ">Original</option>
                                 <option value="altoContraste">Alto contraste</option>
@@ -108,14 +108,15 @@
 
                 <div id="game-pause-container" class="hide">
                     <h1>Juego pausado</h1>  
-                    <button class="btn" id="game-unpause-btn">Despausar</button>
+                    <button class="btn" id="game-unpause-btn">Reanudar juego</button>
+                    <button class="btn" id="config-from-pause-button">Configuraciones</button>
                     <button class="btn" id="game-back-btn">Volver al menu principal</button>
                 </div>
 
                 <div id="game-lvl-score-container" class="hide">
                     <div id=mensaje-container>
                         <img id="imagen-resultado" width="200px">
-                        <h3 id="cartel-titulo"></h3>
+                        <h1 id="cartel-titulo"></h1>
                         <p id="cartel-texto"></p>
                         <div id="game-reintentar-btn-container">
                             <button class="btn" id="game-reintentar-btn">Seguir intentando</button>
