@@ -109,14 +109,10 @@
     padding-right: 5px;
   }
 
-  .grid-config-checkbox-container{
-    display: flex;
-    justify-content: right;
-    align-items: right;
-    padding-left: 5px;
-  }
-
   .grid-config-input-container{
+    font-size:1.5625em; 
+    align-self: center;
+    white-space: nowrap;
     display: flex;
     justify-content: right;
     align-items: right;
@@ -142,7 +138,7 @@
     grid-row: 2 / 3;
   }
 
-
+/*---CHECKBOX---*/
   input[type="checkbox"] {
     align-self: center;
     position: relative;
@@ -182,6 +178,33 @@
     background: #13aadd;;
   }
 
+  input[type="checkbox"]:hover{
+    background: #cbd1d8;
+  }
+
   input[type="checkbox"]:checked::before {
     opacity: 1;
+  }
+
+/*---RADIO BUTTON---*/
+  input[type="radio"]{
+    appearance: none;
+    width: 1.5625em;
+    height: 1.5625em;
+    transition: all 0.15s ease-out 0s;
+    border: 1px solid #3e4041;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    z-index: 1000;
+    border-radius: 50%;
+  }
+
+  input[type="radio"]:hover{
+    background: #cbd1d8;
+  }
+
+  input[type="radio"]:checked{
+    background: #13aadd;
+    border: none;
   }
