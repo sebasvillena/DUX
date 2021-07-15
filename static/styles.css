@@ -208,3 +208,7 @@
     background: #13aadd;
     border: none;
   }
+
+  input[type="radio"].hide{
+    opacity:0
+  }

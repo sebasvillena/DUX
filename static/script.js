@@ -20,7 +20,7 @@ const questions = [
 ]
 
 var configuration_menu_previous;
-
+document.getElementById("option-arrastrar-imagen").checked=true
 //Traigo los elementos del menú principal
 const settingsButton = document.getElementById("settings-btn");
 const helpButton = document.getElementById("help-btn");
@@ -200,11 +200,11 @@ function disableAccessibility(){
 
 document.getElementById("game-select-option-btn").addEventListener("click", function(){
     elementos = document.querySelector("form").elements
-    if(elementos[0].checked){
+    if(elementos[1].checked){
         gameNextLevel(getAnswerData(elementos[0].previousElementSibling.previousElementSibling.name))
-    }else if(elementos[1].checked){
+    }else if(elementos[2].checked){
         gameNextLevel(getAnswerData(elementos[1].previousElementSibling.previousElementSibling.name))
-    }else if (elementos[2].checked){
+    }else if (elementos[3].checked){
         gameNextLevel(getAnswerData(elementos[2].previousElementSibling.previousElementSibling.name))
     }
 })
@@ -264,7 +264,7 @@ settingsContainer.classList.remove('hide')
 }
 
 function settingsBack(){
-    if(document.getElementById("seleccionar-imagenes").checked){
+    if(document.getElementById("option-seleccionar-imagen").checked){
         enableAccessibility()
     }else{
         disableAccessibility()
