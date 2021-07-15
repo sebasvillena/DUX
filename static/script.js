@@ -200,12 +200,16 @@ function disableAccessibility(){
 
 document.getElementById("game-select-option-btn").addEventListener("click", function(){
     elementos = document.querySelector("form").elements
+    console.log(elementos)
     if(elementos[1].checked){
-        gameNextLevel(getAnswerData(elementos[0].previousElementSibling.previousElementSibling.name))
-    }else if(elementos[2].checked){
+        console.log(1)
         gameNextLevel(getAnswerData(elementos[1].previousElementSibling.previousElementSibling.name))
-    }else if (elementos[3].checked){
+    }else if(elementos[2].checked){
+        console.log(2)
         gameNextLevel(getAnswerData(elementos[2].previousElementSibling.previousElementSibling.name))
+    }else if (elementos[3].checked){
+        console.log(3)
+        gameNextLevel(getAnswerData(elementos[3].previousElementSibling.previousElementSibling.name))
     }
 })
 
