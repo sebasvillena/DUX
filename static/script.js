@@ -24,7 +24,7 @@ document.getElementById("option-arrastrar-imagen").checked=true
 //Traigo los elementos del menú principal
 const settingsButton = document.getElementById("settings-btn");
 const helpButton = document.getElementById("help-btn");
-const startButton = document.getElementById("start-btn");
+const showIntroButton = document.getElementById("start-btn");
 const menuContainer = document.getElementById("menu-container")
 
 //traigo los elementos de la pantalla de configuración
@@ -41,7 +41,13 @@ const helpBackButton = document.getElementById("help-back-btn");
 helpButton.addEventListener('click', showHelp)
 helpBackButton.addEventListener('click', helpBack)
 
-
+//Traigo los elementos de la pantalla de introduccion al juego
+const introContainer = document.getElementById("game-introduction-container")
+const startButton = document.getElementById("game-start-button")
+const gameBackButton2 = document.getElementById("game-back-btn2")
+//Seteo comportamiento a los botones
+startButton.addEventListener('click', showGame)
+gameBackButton2.addEventListener('click', gameBack)
 
 //obtiene las preguntas y las mezcla
 var shuffledQuestions, currentQuestionIndex
@@ -75,7 +81,8 @@ unpauseButton.addEventListener('click', gameUnpause)
 const gameContainer = document.getElementById("game-container")
 const pauseButton = document.getElementById("game-pause-btn")
 //Seteo comportamiento de los botones para abrir y cerrar la pantalla
-startButton.addEventListener('click', showGame)
+//showIntroButton.addEventListener('click', showGame)
+showIntroButton.addEventListener('click', showGameIntro)
 pauseButton.addEventListener('click', gamePause)
 //inicio el juego con un set de imagenes
 nextQuestion()
@@ -226,13 +233,20 @@ function showFinish(){
     document.getElementById("finDeJuego-conatiner").classList.remove("hide")
 }
 
+function showGameIntro(){
+    menuContainer.classList.add('hide')
+    introContainer.classList.remove('hide')
+}
+
 function showGame(){
     menuContainer.classList.add('hide')
+    introContainer.classList.add('hide')
     gameContainer.classList.remove('hide')
 }
 
 function gameBack(){
     menuContainer.classList.remove('hide')
+    introContainer.classList.add('hide')
     pauseContainer.classList.add('hide')
 }
 
