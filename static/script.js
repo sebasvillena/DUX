@@ -19,6 +19,9 @@ const questions = [
     ]
 ]
 
+/*-------- PUNTAJE ---------*/
+var puntaje = 0;
+
 var configuration_menu_previous;
 document.getElementById("option-arrastrar-imagen").checked=true
 //Traigo los elementos del menú principal
@@ -91,8 +94,10 @@ const gameOverMainMenuButton = document.getElementById("game-main-menu")
 gameOverMainMenuButton.addEventListener("click", gameOverMenu)
 function gameNextLevel(answer){
     if (answer.correct){
+        puntaje = puntaje + 10 
         gameSuccess()
     } else {
+        puntaje = puntaje - 5
         gameWarning()
     }
     document.getElementById("cartel-texto").innerHTML = answer.comentario
@@ -225,11 +230,13 @@ function gameOverMenu(){
     document.getElementById("finDeJuego-conatiner").classList.add("hide")
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
+    puntaje = 0
     nextQuestion()
 }
 
 function showFinish(){
     nextLvlContainer.classList.add("hide")
+    document.getElementById("puntaje-fin-juego").innerHTML = "El puntaje final es " + puntaje
     document.getElementById("finDeJuego-conatiner").classList.remove("hide")
 }
 
