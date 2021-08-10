@@ -197,6 +197,7 @@ function enableAccessibility(){
     document.querySelector("form").elements.img_option_1.nextElementSibling.classList.remove("hide")
     document.querySelector("form").elements.img_option_2.nextElementSibling.classList.remove("hide")
     document.querySelector("form").elements.img_option_3.nextElementSibling.classList.remove("hide")
+    document.getElementById("imgBag").classList.add("hide")
 }
 
 function disableAccessibility(){
@@ -208,6 +209,7 @@ function disableAccessibility(){
     document.querySelector("form").elements.img_option_1.nextElementSibling.classList.add("hide")
     document.querySelector("form").elements.img_option_2.nextElementSibling.classList.add("hide")
     document.querySelector("form").elements.img_option_3.nextElementSibling.classList.add("hide")
+    document.getElementById("imgBag").classList.remove("hide")
 }
 
 
