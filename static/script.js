@@ -3,12 +3,12 @@
 const questions = [
     
     [
-        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Botella de agua", comentario:"¡Es buena idea llevar agua para mantenernos hidratados!"},
+        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Botella de agua", comentario:"Se recomienda llevar agua suficiente para un día, y recuerda guardar botellas para toda tu familia"},
         { name: "juguete", ruta: "images/juguete.jpg", correct: false, alt:"Juguete cubo de rubik", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."},
         { name: "silla", ruta: "images/silla.jpg", correct: false, alt:"Silla", comentario: "¡Las sillas (y otros muebles) son muy pesados para llevarlos!"}            
     ],
     [
-        { name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas", comentario:"¡Las velas son muy útiles, con ellas podemos ver de noche!"},
+        { name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas", comentario:"Recuerda llevar algo para encenderlas, como fosforos o encendedores!"},
         { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas", comentario:"Lamentablemente, las plantas no son realmente una prioridad durante las emergencias."},
         { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."}            
     ],
@@ -16,6 +16,16 @@ const questions = [
         {name:"botiquin", ruta: "images/botiquin.jpg", correct: true, alt:"Botiquín de primeros auxilios", comentario: "El botiquín es muy importante"},
         {name:"basura", ruta: "images/basura.jpg", corect: false, alt: "Tacho de basura", comentario: "Un tacho de basura no es importante en una emergencia"},
         {name:"escoba", ruta:"images/escoba.jpg", correct: false, alt: "Escoba", comentario: "La escoba no es importante en una emergencia"}
+    ],
+    [
+        {name:"DNI", ruta:"images/dni.jpg", correct:true, alt:"Documentos importantes", comentario:"Recuerda llevar los documentos de toda tu familia! Se recomienda guardarlos en una bolsa hermética para que no les pase nada."},
+        {name:"Oso de peluche", ruta:"images/osoPeluche.jpg", correct: false, alt:"Oso de peluche", comentario:"Los juguetes y peluches no son esenciales en una emergencia. Puedes llevarlo en caso de que quede lugar extra"},
+        {name:"Licuadora", ruta:"images/licuadora.jpg", correct: false, alt:"Licuadora", comentario:"Los electrodomésticos no son de utilidad en una emergencia"}
+    ],
+    [
+        {name:"Linterna", ruta:"images/linterna.jpg", correct:true, alt:"Linterna", comentario:"No te olvides de llevar baterias cargadas!"},
+        {name:"Anillo", ruta:"images/anillo.jpg", correct:false, alt:"Anillo", comentario:"Las joyas y objetos de valor no son de utilidad en una emergencia."},
+        {name:"Guitarra", ruta:"images/guitarra.jpg", correct:false, alt:"Guitarra", comentario:"Los instrumentos musicales no son de utilidad en una emergencia."}
     ]
 ]
 
@@ -243,7 +253,7 @@ function gameOverMenu(){
 function showFinish(){
     puntaje = puntaje + puntaje_aux;
     nextLvlContainer.classList.add("hide")
-    document.getElementById("puntaje-fin-juego").innerHTML = "El puntaje final es " + puntaje
+    document.getElementById("puntaje-fin-juego").innerHTML = "Tu puntaje final es " + puntaje
     document.getElementById("finDeJuego-conatiner").classList.remove("hide")
 }
 
