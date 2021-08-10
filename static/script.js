@@ -19,8 +19,11 @@ const questions = [
     ]
 ]
 
-/*-------- PUNTAJE ---------*/
+/*-------- PUNTAJES ---------*/
 var puntaje = 0;
+var puntaje_opcion_correcta = 10;
+var puntaje_opcion_incorrecta = -5;
+var puntaje_aux;
 
 var configuration_menu_previous;
 document.getElementById("option-arrastrar-imagen").checked=true
@@ -94,10 +97,10 @@ const gameOverMainMenuButton = document.getElementById("game-main-menu")
 gameOverMainMenuButton.addEventListener("click", gameOverMenu)
 function gameNextLevel(answer){
     if (answer.correct){
-        puntaje = puntaje + 10 
+        puntaje_aux = puntaje_opcion_correcta 
         gameSuccess()
     } else {
-        puntaje = puntaje - 5
+        puntaje_aux = puntaje_opcion_incorrecta
         gameWarning()
     }
     document.getElementById("cartel-texto").innerHTML = answer.comentario
@@ -133,6 +136,7 @@ function gameSuccess(){
 }
 
 function nextLevel(){
+    puntaje = puntaje + puntaje_aux;
     self.nextQuestion();
     showGameAgain()
 }
@@ -235,6 +239,7 @@ function gameOverMenu(){
 }
 
 function showFinish(){
+    puntaje = puntaje + puntaje_aux;
     nextLvlContainer.classList.add("hide")
     document.getElementById("puntaje-fin-juego").innerHTML = "El puntaje final es " + puntaje
     document.getElementById("finDeJuego-conatiner").classList.remove("hide")
