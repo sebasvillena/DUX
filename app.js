@@ -11,6 +11,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 })
 
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+    console.log(`Server running at http://:${port}/`);
 })
