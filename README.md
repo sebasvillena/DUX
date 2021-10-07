@@ -8,7 +8,7 @@ npm install
 ```
 ## Run
 ```bash
-node app.js
+npm start
 ```
 Si eso no funciona, es porque no agregué las dependecias correctamente, ejecutar:
 ```bash
