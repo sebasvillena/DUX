@@ -13,35 +13,35 @@
 <body>
     <div class="container">
                 <div id="menu-container">
-                  <h1>JUEGO DUX</h1>  
+                  <h1>Let's make an Emergency Bag!</h1>  
                     <div id="grid-botones-menu" >
-                            <button class="btn" id="help-btn">Cómo jugar</button>
-                            <button class="btn" id="settings-btn">Configuraciones</button>
-                            <button class="btn" id="start-btn">Comenzar</button>
+                            <button class="btn" id="help-btn">How to play</button>
+                            <button class="btn" id="settings-btn">Configurations</button>
+                            <button class="btn" id="start-btn">Start</button>
                     </div>
                 </div>
 
                 <div id="settings-container" class="hide">
-                    <h1>Configuraciones</h1>
+                    <h1>Configurations</h1>
                     <div class="grid-config-container">
                         <div class="grid-config-option-container">
-                            <label for="mostrar-texto"><p>Mostrar texto</p></label> 
+                            <label for="mostrar-texto"><p>Show text</p></label> 
                         </div>
                         <div class="grid-config-input-container">
                             <input class="checkbox" type="checkbox" id="mostrar-texto">
                         </div>
                        
                         <div class="grid-config-option-container">
-                            <p>Modo de juego:</p> 
+                            <p>Game mode:</p> 
                         </div>
                         
                         <div class="grid-config-input-container">
-                            <label for="option-arrastrar-imagen" >Arrastrar imagenes</label>
+                            <label for="option-arrastrar-imagen" >Drag images</label>
                             <input id="option-arrastrar-imagen" name="modo-juego" type="radio" checked>
                         </div>
                         <div class="grid-config-option-container"></div>  <!--Llena el casillero de la grilla entre opciones-->
                         <div class="grid-config-input-container">
-                            <label for="option-seleccionar-imagen">Seleccionar item</label>
+                            <label for="option-seleccionar-imagen">Select item</label>
                             <input id="option-seleccionar-imagen" name="modo-juego" type="radio">
                         </div>
 
@@ -72,24 +72,24 @@
                 </div>
 
                 <div id="help-container" class="hide">
-                    <h1>Cómo jugar</h1>
-                    <p>Si el modo de juego elegido es "arrastrar imagenes", debes seleccionar los elementos que consideres que correspondan a una mochila de emergencia y arrastralos hacia la imagen de la mochila.</p>
-                    <p>Si el modo de juego elegido es "seleccionar item", debes seleccionar los elementos que consideres que correspondan a una mochila de emergencia y presionar el botón "Seleccionar opción".</p>
+                    <h1>How to play</h1>
+                    <p>If the game mode selected is "drag images", you have to select the elements you think belong to an emergency bag, and drag them into the picture of the bag.</p>
+                    <p>If the game mode selected is "select item", you have to select the element you consider belong to an emergency bag, and then press the button "Select option".</p>
                     <br>
-                    <p>El modo de juego puede modificarse en el menú de configuración. Puedes acceder al menu de configuración desde la pantalla de inicio, o desde el menú de pausa del juego.</p>
+                    <p>The game mode can be changed in the configuration menu. You can access such menu from the main screen, or from the pause menu in the game.</p>
                     <br>
-                    <p>El objetivo de este juego es aprender qué cosas pueden ser de ayuda en caso de que te encuentres en una situación de emergencia, además de aprender por que son o no útiles.</p>
+                    <p>The objective of the game is learn what things can be of help in case of an emergency, while also learning why they are useful (or not).</p>
                     <button class="btn" id="help-back-btn">Volver</button>
                 </div>
 
                 <div id="game-introduction-container" class="hide">
-                    <h1>Introducción al juego</h1>  
-                    <p>Uno nunca sabe cuando podría ocurrir una catastrofe, por eso es bueno estar siempre preparado.<br>
-                    En este juego aprenderás qué elementos son importantes para llevar en una mochila en caso de emergencias y el porque de cada uno.</p>
-                    <p>Para jugar simplemente debes seleccionar los elementos que consideres que correspondan a una mochila de emergencia y arrastrarlos hacia la imagen de la mochila, o presionar el botón "Seleccionar opción", dependiendo del modo de juego seleccionado.</p>
-                    <p>Desde el menú de pausa puedes modificar las configuraciones de ser necesario.</p>
-                    <button class="btn" id="game-start-button">Iniciar juego</button>
-                    <button class="btn" id="game-back-btn2">Volver al menu principal</button>
+                    <h1>Game introduction</h1>  
+                    <p>One can never tell when a catastrophe could occur, thats why it's good to always be prepared for them.<br>
+                        In this game you will learn what elements are important to have in a bag in case of emergencies, and the reason why each of them are important. </p>
+                    <p>To play you simply must select the elements you think belong to an emergency bag, and then drag them onto the picture of the bag, or press the button "Select option", depending on the game mode selected on the configuration menu.</p>
+                    <p>If you need to, you can access the configurations from the pause menu.</p>
+                    <button class="btn" id="game-start-button">Start game</button>
+                    <button class="btn" id="game-back-btn2">Return to the main screen</button>
                 </div>
 
                 <div id="game-container" class="hide">            
@@ -123,16 +123,16 @@
 
                         </form>     
                         <div class="hide" id="game-select-option-btn-container">
-                            <button class="btn" id="game-select-option-btn">Seleccionar opción</button>
+                            <button class="btn" id="game-select-option-btn">Select option</button>
                         </div>
-                        <button class="btn" id="game-pause-btn">Pausar</button>
+                        <button class="btn" id="game-pause-btn">Pause</button>
                 </div>
 
                 <div id="game-pause-container" class="hide">
-                    <h1>Juego pausado</h1>  
-                    <button class="btn" id="game-unpause-btn">Reanudar juego</button>
-                    <button class="btn" id="config-from-pause-button">Configuraciones</button>
-                    <button class="btn" id="game-back-btn">Volver al menu principal</button>
+                    <h1>Game paused</h1>  
+                    <button class="btn" id="game-unpause-btn">Return to the game</button>
+                    <button class="btn" id="config-from-pause-button">Configurations</button>
+                    <button class="btn" id="game-back-btn">Return to the main screen</button>
                 </div>
 
                 <div id="game-lvl-score-container" class="hide">
@@ -141,13 +141,13 @@
                         <h1 id="cartel-titulo"></h1>
                         <p id="cartel-texto"></p>
                         <div id="game-siguiente-btn-container">
-                            <button class="btn" id="game-siguiente-btn">Siguiente nivel</button>
+                            <button class="btn" id="game-siguiente-btn">Next level</button>
                         </div>
                         <div id="game-finalizar-btn-container" class="hide">
-                            <button class="btn" id="game-finalizar-btn">Ver puntaje final</button>
+                            <button class="btn" id="game-finalizar-btn">See final score</button>
                         </div>
                         <div id="game-reintentar-btn-container">
-                            <button class="btn" id="game-reintentar-btn">Seguir intentando</button>
+                            <button class="btn" id="game-reintentar-btn">Keep trying</button>
                         </div>  
                         
                     </div>
@@ -155,13 +155,13 @@
 
 
                 <div id="finDeJuego-conatiner" class="hide">
-                            <h3>¡Felicidades!</h3>
-                            <p>Has completado el juego</p>
+                            <h3>Congratulations!</h3>
+                            <p>You have finished the game</p>
                             <p id=puntaje-fin-juego></p>
                             <br>
-                            <p>Recuerda que siempre es bueno estar preparado para una emergencia</p>
-                            <p>Puedes encontrar información adicional en sitios oficiales <a href="https://www.argentina.gob.ar/sinagir/kit-de-emergencias">como este</a></p>
-                            <button class="btn" id="game-main-menu">Volver al menú principal</button>
+                            <p>Remember it's always a good idea to be prepared!</p>
+                            <p>You can find more information about emergency bags on official sites <a href="https://www.argentina.gob.ar/sinagir/kit-de-emergencias">like this.</a></p>
+                            <button class="btn" id="game-main-menu">Return to the main screen</button>
                 </div>
 
                 

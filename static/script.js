@@ -3,29 +3,44 @@
 const questions = [
     
     [
-        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Botella de agua", comentario:"Se recomienda llevar agua suficiente para un día, y recuerda guardar botellas para toda tu familia"},
-        { name: "juguete", ruta: "images/juguete.jpg", correct: false, alt:"Juguete cubo de rubik", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."},
-        { name: "silla", ruta: "images/silla.jpg", correct: false, alt:"Silla", comentario: "¡Las sillas (y otros muebles) son muy pesados para llevarlos!"}            
+        { name: "agua", ruta:"images/agua.jpg", correct: true, alt:"Water bottle", comentario:
+        "It's recomended to take enough water for at least a day. Remember to save bottles for your whole family!"},
+        { name: "juguete", ruta: "images/juguete.jpg", correct: false, alt:"Rubix cube toy", comentario:
+        "Toys are fun, but they aren't a priority during emergencies."},
+        { name: "silla", ruta: "images/silla.jpg", correct: false, alt:"Chair", comentario: 
+        "Chairs (and other furniture) are too heavy to take with you during emergencies!"},          
     ],
     [
-        { name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Velas", comentario:"Recuerda llevar algo para encenderlas, como fosforos o encendedores!"},
-        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plantas o macetas", comentario:"Lamentablemente, las plantas no son realmente una prioridad durante las emergencias."},
-        { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."}            
+        { name: "vela", ruta: "images/vela.jpg", correct: true, alt:"Candles", 
+        comentario:"Remember to take something to light them up, like lighters or matches!"},
+        { name: "planta", ruta:"images/planta.jpg", correct: false, alt:"Plant", 
+        comentario:"Sadly, plants aren't a priority during emergencies."},
+        { name: "pelota-futbol", ruta: "images/pelota-futbol.jpg", correct: false, alt:"Football ball", 
+        comentario:"Toys are fun, but they aren't a priority during emergencies."}          
     ],
     [
-        {name:"botiquin", ruta: "images/botiquin.jpg", correct: true, alt:"Botiquín de primeros auxilios", comentario: "El botiquín es muy importante"},
-        {name:"basura", ruta: "images/basura.jpg", corect: false, alt: "Tacho de basura", comentario: "Un tacho de basura no es importante en una emergencia"},
-        {name:"escoba", ruta:"images/escoba.jpg", correct: false, alt: "Escoba", comentario: "La escoba no es importante en una emergencia"}
+        {name:"botiquin", ruta: "images/botiquin.jpg", correct: true, alt:"First aid kit", 
+        comentario: "First aid kits are very important. Remember to have one prepared with all you could need in case of emergencies."},
+        {name:"basura", ruta: "images/basura.jpg", corect: false, alt: "Trash can", 
+        comentario: "Trash cans aren't important during emergencies."},
+        {name:"escoba", ruta:"images/escoba.jpg", correct: false, alt: "Broom", 
+        comentario: "Broom's arent important during emergencies."}
     ],
     [
-        {name:"DNI", ruta:"images/dni.jpg", correct:true, alt:"Documentos importantes", comentario:"Recuerda llevar los documentos de toda tu familia! Se recomienda guardarlos en una bolsa hermética para que no les pase nada."},
-        {name:"Oso de peluche", ruta:"images/osoPeluche.jpg", correct: false, alt:"Oso de peluche", comentario:"Los juguetes y peluches no son esenciales en una emergencia. Puedes llevarlo en caso de que quede lugar extra"},
-        {name:"Licuadora", ruta:"images/licuadora.jpg", correct: false, alt:"Licuadora", comentario:"Los electrodomésticos no son de utilidad en una emergencia"}
+        {name:"DNI", ruta:"images/dni.jpg", correct:true, alt:"Important documentation", 
+        comentario:"Remember to take all the important documentation of your family! It's recomended to store them in waterproof bags to prevent any damages."},
+        {name:"Oso de peluche", ruta:"images/osoPeluche.jpg", correct: false, alt:"Teddy bear", 
+        comentario:"Toys and teddy bears arent important in case of emergencies. If there is enough time and space, you can take one or two with you, though."},
+        {name:"Licuadora", ruta:"images/licuadora.jpg", correct: false, alt:"Blender", 
+        comentario:"Appliances aren't important during emergencies."}
     ],
     [
-        {name:"Linterna", ruta:"images/linterna.jpg", correct:true, alt:"Linterna", comentario:"No te olvides de llevar baterias cargadas!"},
-        {name:"Anillo", ruta:"images/anillo.jpg", correct:false, alt:"Anillo", comentario:"Las joyas y objetos de valor no son de utilidad en una emergencia."},
-        {name:"Guitarra", ruta:"images/guitarra.jpg", correct:false, alt:"Guitarra", comentario:"Los instrumentos musicales no son de utilidad en una emergencia."}
+        {name:"Linterna", ruta:"images/linterna.jpg", correct:true, alt:"Flashlight", 
+        comentario:"Don't forget to take extra charged batteries with you!"},
+        {name:"Anillo", ruta:"images/anillo.jpg", correct:false, alt:"Ring", 
+        comentario:"Jewelry isn't important during an emergency."},
+        {name:"Guitarra", ruta:"images/guitarra.jpg", correct:false, alt:"Guitar", 
+        comentario:"Musical instruments aren't useful during an emergency."}
     ]
 ]
 
@@ -124,7 +139,7 @@ function gameNextLevel(answer){
 function gameWarning(){
     //Código para mostrar cartel de error, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
-    document.getElementById("cartel-titulo").innerHTML = "¡Cuidado!"
+    document.getElementById("cartel-titulo").innerHTML = "Careful!"
     document.getElementById("imagen-resultado").src = "images/opcion-incorrecta.png"
 
     messageContainer = document.getElementById("mensaje-container")
@@ -137,7 +152,7 @@ function gameWarning(){
 function gameSuccess(){
     //Código para mostrar cartel de success, en el futuro cuando tengamos la variable global
     //con el nivel actual, tendríamos que setear ese texto en vez de este placeholder
-    document.getElementById("cartel-titulo").innerHTML = "¡Muy bien!"
+    document.getElementById("cartel-titulo").innerHTML = "Very good!"
     document.getElementById("imagen-resultado").src = "images/opcion-correcta.png"
 
     messageContainer = document.getElementById("mensaje-container")
@@ -253,7 +268,7 @@ function gameOverMenu(){
 function showFinish(){
     puntaje = puntaje + puntaje_aux;
     nextLvlContainer.classList.add("hide")
-    document.getElementById("puntaje-fin-juego").innerHTML = "Tu puntaje final es " + puntaje
+    document.getElementById("puntaje-fin-juego").innerHTML = "Your final score is " + puntaje
     document.getElementById("finDeJuego-conatiner").classList.remove("hide")
 }
 
