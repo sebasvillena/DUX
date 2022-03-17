@@ -3,9 +3,9 @@
 const questions = [
     
     [
-        { name: "agua", ruta:"static/images/agua.jpg", correct: true, alt:"Botella de agua", comentario:"Se recomienda llevar agua suficiente para un día, y recuerda guardar botellas para toda tu familia"},
-        { name: "juguete", ruta: "static/images/juguete.jpg", correct: false, alt:"Juguete cubo de rubik", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."},
-        { name: "silla", ruta: "static/images/silla.jpg", correct: false, alt:"Silla", comentario: "¡Las sillas (y otros muebles) son muy pesados para llevarlos!"}            
+        { name: "agua", ruta:"static/images/agua.png", correct: true, alt:"Botella de agua", comentario:"Se recomienda llevar agua suficiente para un día, y recuerda guardar botellas para toda tu familia"},
+        { name: "juguete", ruta: "static/images/juguete.png", correct: false, alt:"Juguete cubo de rubik", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."},
+        { name: "silla", ruta: "static/images/silla.png", correct: false, alt:"Silla", comentario: "¡Las sillas (y otros muebles) son muy pesados para llevarlos!"}            
     ],
     [
         { name: "vela", ruta: "static/images/vela.jpg", correct: true, alt:"Velas", comentario:"Recuerda llevar algo para encenderlas, como fosforos o encendedores!"},
@@ -13,9 +13,9 @@ const questions = [
         { name: "pelota-futbol", ruta: "static/images/pelota-futbol.jpg", correct: false, alt:"Pelota de futbol", comentario:"Los juguetes son divertidos, pero no son realmente una prioridad en las emergencias."}            
     ],
     [
-        {name:"botiquin", ruta: "static/images/botiquin.jpg", correct: true, alt:"Botiquín de primeros auxilios", comentario: "El botiquín es muy importante"},
-        {name:"basura", ruta: "static/images/basura.jpg", corect: false, alt: "Tacho de basura", comentario: "Un tacho de basura no es importante en una emergencia"},
-        {name:"escoba", ruta:"static/images/escoba.jpg", correct: false, alt: "Escoba", comentario: "La escoba no es importante en una emergencia"}
+        {name:"botiquin", ruta: "static/images/botiquin.png", correct: true, alt:"Botiquín de primeros auxilios", comentario: "El botiquín es muy importante"},
+        {name:"basura", ruta: "static/images/basura.png", corect: false, alt: "Tacho de basura", comentario: "Un tacho de basura no es importante en una emergencia"},
+        {name:"escoba", ruta:"static/images/escoba.png", correct: false, alt: "Escoba", comentario: "La escoba no es importante en una emergencia"}
     ],
     [
         {name:"DNI", ruta:"static/images/dni.jpg", correct:true, alt:"Documentos importantes", comentario:"Recuerda llevar los documentos de toda tu familia! Se recomienda guardarlos en una bolsa hermética para que no les pase nada."},
@@ -23,9 +23,9 @@ const questions = [
         {name:"Licuadora", ruta:"static/images/licuadora.jpg", correct: false, alt:"Licuadora", comentario:"Los electrodomésticos no son de utilidad en una emergencia"}
     ],
     [
-        {name:"Linterna", ruta:"static/images/linterna.jpg", correct:true, alt:"Linterna", comentario:"No te olvides de llevar baterias cargadas!"},
+        {name:"Linterna", ruta:"static/images/linterna.png", correct:true, alt:"Linterna", comentario:"No te olvides de llevar baterias cargadas!"},
         {name:"Anillo", ruta:"static/images/anillo.jpg", correct:false, alt:"Anillo", comentario:"Las joyas y objetos de valor no son de utilidad en una emergencia."},
-        {name:"Guitarra", ruta:"static/images/guitarra.jpg", correct:false, alt:"Guitarra", comentario:"Los instrumentos musicales no son de utilidad en una emergencia."}
+        {name:"Guitarra", ruta:"static/images/guitarra.png", correct:false, alt:"Guitarra", comentario:"Los instrumentos musicales no son de utilidad en una emergencia."}
     ]
 ]
 
