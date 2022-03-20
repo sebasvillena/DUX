@@ -145,9 +145,14 @@ function gameSuccess(){
     messageContainer.classList.add("message-container-success")
 }
 
+function changeScoreOnScreen(){
+    document.getElementById("ingame-score-text").innerHTML = "Puntaje actual: " + puntaje
+}
+
 function nextLevel(){
     puntaje = puntaje + puntaje_aux;
     self.nextQuestion();
+    self.changeScoreOnScreen();
     showGameAgain()
 }
 
