@@ -6,6 +6,17 @@ Usar npm para para instalar las dependencias
 ```bash
 npm install
 ```
+
+## Correr con Docker
+Build
+```bash
+docker build -t deu .
+```
+Run
+```bash
+docker run -p 3000:3000 deu
+```
+
 ## Run
 ```bash
 npm start
